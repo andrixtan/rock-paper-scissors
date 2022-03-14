@@ -1,14 +1,42 @@
-body {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-}
+/* body {
+    
+} */
 
 div {
     display: flex;
-    gap: 30px;
+    gap: 100px;
+    justify-content: center;
 }
 
 .choices {
-    width: 80px;
+    width: 200px;
+    height: 200px;
+}
+
+.header {
+    padding: 60px;
+    display: flex;
+    width: 1200px;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 0px;
+}
+
+.score {
+    flex-wrap: wrap;
+    width: 130px;
+    text-align: center;
+    font-size: 40px;
+    gap: 0px;
+}
+
+.playerscore, .computerscore {
+    margin: 0px;
+}
+
+.results {
+    height: 80px;
+    margin-bottom: 80px;
+    font-size: 50px;
 }

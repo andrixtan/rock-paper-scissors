@@ -3,37 +3,39 @@ let computerPlay = () => {
   return choices[Math.floor(Math.random() * choices.length)];
 };
 
+const result = document.querySelector('.results');
+
 let playRound = (player, computer) => {
   // console.log(`player = ${player}, computer = ${computer}`);
   let playerChoice = player.toLowerCase();
   let computerChoice = computer.toLowerCase();
   if (playerChoice === "scissors") {
     if (computerChoice === "paper") {
-      return "You Win! Scissors beats Paper";
+      return result.textContent = "You Win! Scissors beats Paper";
     } else if (computerChoice === "rock") {
-      return "You Lose! Rock beats Scissors";
+      return result.textContent = "You Lose! Rock beats Scissors";
     } else {
-      return "Tie!";
+      return result.textContent = "Tie!";
     }
   }
 
   if (playerChoice === "rock") {
     if (computerChoice === "paper") {
-      return "You Lose! Paper beats Rock";
+      return result.textContent = "You Lose! Paper beats Rock";
     } else if (computerChoice === "scissors") {
-      return "You Win! Rock beats Scissors";
+      return result.textContent = "You Win! Rock beats Scissors";
     } else if (computerChoice === "rock") {
-      return "Tie!";
+      return result.textContent = "Tie!";
     }
   }
 
   if (playerChoice === "paper") {
     if (computerChoice === "rock") {
-      return "You Win! Paper beats rock";
-    } else if (computerChoice === "Scissors") {
-      return "You Lose! Scissors beats Paper";
+      return result.textContent = "You Win! Paper beats rock";
+    } else if (computerChoice === "scissors") {
+      return result.textContent = "You Lose! Scissors beats Paper";
     } else {
-      return "Tie!";
+      return result.textContent = "Tie!";
     }
   }
 };
@@ -42,8 +44,9 @@ const btns = document.querySelectorAll(".choices");
 btns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     // console.log(e.target.classList[1]);
-    // console.log(computerPlay())
-    console.log(playRound(e.target.classList[1], computerPlay()))
+    // console.log(e)
+    console.log(e);
+    playRound(e.target.alt, computerPlay());
   });
 });
 
