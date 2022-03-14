@@ -5,14 +5,23 @@ let computerPlay = () => {
 
 const result = document.querySelector('.results');
 
+
+let playerScore = document.querySelector('.playerpoints');
+let computerScore = document.querySelector('.computerpoints');
+console.log(playerScore);
+
+
 let playRound = (player, computer) => {
   // console.log(`player = ${player}, computer = ${computer}`);
   let playerChoice = player.toLowerCase();
   let computerChoice = computer.toLowerCase();
   if (playerChoice === "scissors") {
     if (computerChoice === "paper") {
+      playerScore.textContent = parseInt(playerScore.textContent) + 1;
+      // console.log(playerScore);
       return result.textContent = "You Win! Scissors beats Paper";
     } else if (computerChoice === "rock") {
+      computerScore.textContent = parseInt(computerScore.textContent) + 1;
       return result.textContent = "You Lose! Rock beats Scissors";
     } else {
       return result.textContent = "Tie!";
@@ -21,8 +30,10 @@ let playRound = (player, computer) => {
 
   if (playerChoice === "rock") {
     if (computerChoice === "paper") {
+      computerScore.textContent = parseInt(computerScore.textContent) + 1;
       return result.textContent = "You Lose! Paper beats Rock";
     } else if (computerChoice === "scissors") {
+      playerScore.textContent = parseInt(playerScore.textContent) + 1;
       return result.textContent = "You Win! Rock beats Scissors";
     } else if (computerChoice === "rock") {
       return result.textContent = "Tie!";
@@ -31,13 +42,16 @@ let playRound = (player, computer) => {
 
   if (playerChoice === "paper") {
     if (computerChoice === "rock") {
+      playerScore.textContent = parseInt(playerScore.textContent) + 1;
       return result.textContent = "You Win! Paper beats rock";
     } else if (computerChoice === "scissors") {
+      computerScore.textContent = parseInt(computerScore.textContent) + 1;
       return result.textContent = "You Lose! Scissors beats Paper";
     } else {
       return result.textContent = "Tie!";
     }
   }
+  
 };
 
 const btns = document.querySelectorAll(".choices");
@@ -45,10 +59,12 @@ btns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     // console.log(e.target.classList[1]);
     // console.log(e)
-    console.log(e);
+    // console.log(e);
     playRound(e.target.alt, computerPlay());
   });
 });
+
+
 
 // btn.addEventListener('click', (e) => {
 //     console.log(e.target.classList[1])
