@@ -35,6 +35,12 @@ div {
 .playerscore, .computerscore {
     margin: 0px;
 }
+/* 
+.clicking {
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+} */
 
 .results {
     height: 80px;
@@ -55,7 +61,7 @@ div {
 .middle-section {
     display: flex;
     justify-content: space-between;
-    height: 500px;
+    height: 400px;
 }
 
 .results-and-icons {
@@ -73,7 +79,20 @@ div {
     border-radius: 8px;
 }
 
+.choices:active {
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+}
+
 .selections {
     display: flex;
     margin-top: auto;
 }
+
+.restart-btn {
+    font-size: 40px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
