@@ -1,6 +1,6 @@
-/* body {
-    
-} */
+body {
+    background-color: rgb(65, 204, 239);
+}
 
 div {
     display: flex;
@@ -21,11 +21,12 @@ div {
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 0px;
+    margin-bottom: 40px;
 }
 
 .score {
     flex-wrap: wrap;
-    width: 130px;
+    width: 180px;
     text-align: center;
     font-size: 40px;
     gap: 0px;
@@ -37,6 +38,42 @@ div {
 
 .results {
     height: 80px;
-    margin-bottom: 80px;
     font-size: 50px;
+}
+
+.end-results {
+    position: fixed;
+    font-size: 70px;
+    background-color: white;
+    padding: 130px;
+    top: 340px;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 16px;
+}
+
+.middle-section {
+    display: flex;
+    justify-content: space-between;
+    height: 500px;
+}
+
+.results-and-icons {
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 30px;
+    height: 340px;
+}
+
+.choices {
+    padding: 15px;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 8px;
+}
+
+.selections {
+    display: flex;
+    margin-top: auto;
 }

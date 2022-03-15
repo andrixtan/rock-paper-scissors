@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="header">
@@ -19,14 +19,26 @@
         <p class="computerpoints">0</p>
       </div>
     </div>
-    <div class="results"></div>
-    <div>
-      <input type="image" class="choices" alt="Rock" src="./rock.png">
-      <input type="image" class="choices" alt="Paper" src="./paper.png">
-      <input type="image" class="choices" alt="Scissors" src="./scissors.png">
-      <!-- <button class="choices rock">Rock</button>
-      <button class="choices paper">Paper</button>
-      <button class="choices scissors">Scissors</button> -->
+    <div class="middle-section">
+      <div class="selection">
+        <img class="player-selection" src="./blank.png" width="300" height="300" style = "opacity:0.4">
+      </div>
+      <div class="results-and-icons">
+        <div class="results"></div>
+        <div class="selections">
+          <input type="image" class="choices" alt="Rock" src="./rock.png" />
+          <input type="image" class="choices" alt="Paper" src="./paper.png" />
+          <input
+            type="image"
+            class="choices"
+            alt="Scissors"
+            src="./scissors.png"
+          />
+        </div>
+      </div>
+      <div class="selection">
+        <img class="computer-selection" src="./blank.png" width="300" height="300" style = "opacity:0.4">
+      </div>
     </div>
   </body>
 </html>

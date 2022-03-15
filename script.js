@@ -3,68 +3,104 @@ let computerPlay = () => {
   return choices[Math.floor(Math.random() * choices.length)];
 };
 
-const result = document.querySelector('.results');
+const result = document.querySelector(".results");
 
-
-let playerScore = document.querySelector('.playerpoints');
-let computerScore = document.querySelector('.computerpoints');
+let playerScore = document.querySelector(".playerpoints");
+let computerScore = document.querySelector(".computerpoints");
 console.log(playerScore);
 
+let playerSelection = document.querySelector(".player-selection");
+let computerSelection = document.querySelector(".computer-selection");
 
 let playRound = (player, computer) => {
-  // console.log(`player = ${player}, computer = ${computer}`);
   let playerChoice = player.toLowerCase();
   let computerChoice = computer.toLowerCase();
+
   if (playerChoice === "scissors") {
+    playerSelection.src = "./scissors.png";
     if (computerChoice === "paper") {
+      computerSelection.src = "./paper.png";
       playerScore.textContent = parseInt(playerScore.textContent) + 1;
-      // console.log(playerScore);
-      return result.textContent = "You Win! Scissors beats Paper";
+      if (playerScore.textContent == 5) {
+        result.textContent = "End of Game. You won!";
+        return (result.className = "end-results");
+      } else {
+        return (result.textContent = "You Win! Scissors beats Paper");
+      }
     } else if (computerChoice === "rock") {
+      computerSelection.src = "./rock.png";
       computerScore.textContent = parseInt(computerScore.textContent) + 1;
-      return result.textContent = "You Lose! Rock beats Scissors";
-    } else {
-      return result.textContent = "Tie!";
+      if (computerScore.textContent == 5) {
+        result.textContent = "End of Game. You lost!";
+        return (result.className = "end-results");
+      } else {
+        return (result.textContent = "You Lose! Rock beats Scissors");
+      }
+    } else if (computerChoice === "scissors") {
+      computerSelection.src = "./scissors.png";
+      return (result.textContent = "Tie!");
     }
   }
 
   if (playerChoice === "rock") {
+    playerSelection.src = "./rock.png";
     if (computerChoice === "paper") {
+      computerSelection.src = "./paper.png";
       computerScore.textContent = parseInt(computerScore.textContent) + 1;
-      return result.textContent = "You Lose! Paper beats Rock";
+      if (computerScore.textContent == 5) {
+        result.textContent = "End of Game. You lost!";
+        return (result.className = "end-results");
+      } else {
+        return (result.textContent = "You Lose! Paper beats Rock");
+      }
     } else if (computerChoice === "scissors") {
+      computerSelection.src = "./scissors.png";
       playerScore.textContent = parseInt(playerScore.textContent) + 1;
-      return result.textContent = "You Win! Rock beats Scissors";
+      if (playerScore.textContent == 5) {
+        result.textContent = "End of Game. You won!";
+        return (result.className = "end-results");
+      } else {
+        return (result.textContent = "You Win! Rock beats Scissors");
+      }
     } else if (computerChoice === "rock") {
-      return result.textContent = "Tie!";
+      computerSelection.src = "./rock.png";
+      return (result.textContent = "Tie!");
     }
   }
 
   if (playerChoice === "paper") {
+    playerSelection.src = "./paper.png";
     if (computerChoice === "rock") {
+      computerSelection.src = "./rock.png";
       playerScore.textContent = parseInt(playerScore.textContent) + 1;
-      return result.textContent = "You Win! Paper beats rock";
+      if (playerScore.textContent == 5) {
+        result.textContent = "End of Game. You won!";
+        return (result.className = "end-results");
+      } else {
+        return (result.textContent = "You Win! Paper beats rock");
+      }
     } else if (computerChoice === "scissors") {
+      computerSelection.src = "./scissors.png";
       computerScore.textContent = parseInt(computerScore.textContent) + 1;
-      return result.textContent = "You Lose! Scissors beats Paper";
+      if (computerScore.textContent == 5) {
+        result.textContent = "End of Game. You lost!";
+        return (result.className = "end-results");
+      } else {
+        return (result.textContent = "You Lose! Scissors beats Paper");
+      }
     } else {
-      return result.textContent = "Tie!";
+      computerSelection.src = "./paper.png";
+      return (result.textContent = "Tie!");
     }
   }
-  
 };
 
 const btns = document.querySelectorAll(".choices");
 btns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-    // console.log(e.target.classList[1]);
-    // console.log(e)
-    // console.log(e);
     playRound(e.target.alt, computerPlay());
   });
 });
-
-
 
 // btn.addEventListener('click', (e) => {
 //     console.log(e.target.classList[1])
